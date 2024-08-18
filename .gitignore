@@ -1,0 +1,10 @@
+# IDE stuff
+.bloop/
+.bsp/
+.idea/
+.metals/
+.vscode/
+*.code-workspace
+
+# Build products
+target/
