@@ -1,5 +1,9 @@
 package com.xeppaka
 
-import com.xeppaka.app.MyAnnotation
+import com.xeppaka.MyAnnotation
 
-final case class Model1(@MyAnnotation(st = "test") color: String)
+object Model1 {
+  def f1: Unit = println("f1")
+}
+
+final case class Model1(@MyAnnotation(st = "test") @MyAnnotationScala color: String)

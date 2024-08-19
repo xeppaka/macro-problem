@@ -1,4 +1,4 @@
-package com.xeppaka.app;
+package com.xeppaka;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

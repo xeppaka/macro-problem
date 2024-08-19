@@ -10,8 +10,15 @@ object Annotations {
 
     val tpe: TypeRepr = TypeRepr.of[T]
 
+    tpe.typeSymbol.primaryConstructor.paramSymss.flatten.flatMap(field => field.annotations).map { an =>
+      val t = tpe.memberType(an.symbol.owner)
+      println(t.typeSymbol.companionModule.fullName)
+      t.typeSymbol.companionModule.fullName
+    }.foreach(println)
+
     Expr.ofList {
-      tpe.typeSymbol.primaryConstructor.paramSymss.flatten.flatMap(field => field.annotations).map { an => an.asExpr }
+      List.empty
+      //tpe.typeSymbol.primaryConstructor.paramSymss.flatten.flatMap(field => field.annotations).filter(_.symbol.isAbstractType).map(_.asExpr)
     }
   }
 }
